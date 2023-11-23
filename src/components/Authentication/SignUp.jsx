@@ -1,46 +1,89 @@
 import React from 'react';
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from './../../firebase.init';
+import { useNavigate } from 'react-router-dom';
+
 
 const SignUp = () => {
+  // firebase hooks data
+  const [
+    createUserWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useCreateUserWithEmailAndPassword(auth)
+
+  //handle from 
+  const handleSubmit =(e)=>{
+    e.preventDefault();
+    const name=e.target.name.value;
+    const email=e.target.email.value;
+    const password = e.target.password.value;
+   //send data
+    createUserWithEmailAndPassword(email,password)
+  }
+
+
+  //success navigate
+  const navigate=useNavigate()
+  const navigateSignUp=()=>{
+  navigate("/signin")
+  }
+  if (user){
+    navigate("/")
+  }
+
+
     return (
       <div>
-        <section class="">
-          <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-            <div class="w-full bg-gradient-to-r from-pink-300  to-pink-500 rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-              <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+        <section className="">
+          <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+            <div className="w-full bg-gradient-to-r from-pink-300  to-pink-500 rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+              <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                   Sign Up to your account
                 </h1>
-                <form class="space-y-4 md:space-y-6" action="#">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-4 md:space-y-6"
+                  
+                >
                   <div>
-                    <label for="email" class="block mb-2 text-sm font-medium  ">
+                    <label
+                   
+                      className="block mb-2 text-sm font-medium  "
+                    >
                       Your Name
                     </label>
                     <input
                       type="name"
                       name="name"
-                      id="email"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                 
+                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="write your name "
                       required=""
                     />
                   </div>
                   <div>
-                    <label for="email" class="block mb-2 text-sm font-medium  ">
+                    <label
+                     
+                      className="block mb-2 text-sm font-medium  "
+                    >
                       Your email
                     </label>
                     <input
                       type="email"
                       name="email"
                       id="email"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       placeholder="name@company.com"
                       required=""
                     />
                   </div>
                   <div>
                     <label
-                      for="password"
-                      class="block mb-2 text-sm font-medium "
+                      
+                      className="block mb-2 text-sm font-medium "
                     >
                       Password
                     </label>
@@ -49,40 +92,23 @@ const SignUp = () => {
                       name="password"
                       id="password"
                       placeholder="••••••••"
-                      class="bg-gray-50 border border-gray-300  sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="bg-gray-50 border border-gray-300  sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       required=""
                     />
                   </div>
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-start">
-                      <div class="flex items-center h-5">
-                        <input
-                          id="remember"
-                          aria-describedby="remember"
-                          type="checkbox"
-                          class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                          required=""
-                        />
-                      </div>
-                      <div class="ml-3 text-sm">
-                        <label for="remember" class="">
-                          Remember me
-                        </label>
-                      </div>
-                    </div>
-                    
-                  </div>
-                  <button
+                
+                  <input
                     type="submit"
-                    class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300  bg-red-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
-                  >
-                    Sign Up
-                  </button>
-                  <p class="">
+                    value="submit"
+                    className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300  bg-red-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+                  />
+                    
+              
+                  <p className="">
                     Don’t have an account yet?{" "}
                     <a
                       href="/signin"
-                      class="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                     >
                       Sign in
                     </a>
