@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Home = () => {
     return (
       <div>
@@ -8,6 +9,7 @@ const Home = () => {
             Sign_In Or Create_Account
           </a>
         </div>
+       
       </div>
     );
 };
