@@ -1,11 +1,16 @@
 import React from 'react';
+import { IoMdHome } from "react-icons/io";
 
 const SideNavbar = () => {
     return (
-        <div>
-        {/* dsjhfjshdfjhsd */}
-        <p>ytutyut</p>
-        </div>
+      <div className=" ">
+       
+
+
+
+
+       
+      </div>
     );
 };
 
