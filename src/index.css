@@ -1,13 +1,15 @@
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 
 .logo{
     font-family: 'Pacifico', cursive;
 }
 .profile_name{
     font-family: 'Pacifico', cursive;
+}
+.border_people {
+    border:1px solid rgb(165, 157, 157)
 }

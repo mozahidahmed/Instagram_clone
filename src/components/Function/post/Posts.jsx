@@ -16,7 +16,7 @@ const Posts = () => {
     },[])
   return (
     <div className="py-6">
-      <div className="grid lg:grid-cols-2 gap-4">
+      <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-4">
         {
             post.map((data)=>(
                 <Post post={data}></Post>
