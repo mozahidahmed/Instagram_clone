@@ -7,7 +7,7 @@ import Navbar from './components/shared/Navbar';
 
 const App = () => {
   return (
-    <div className="px-6 py-6 bg-[#020617] ">
+    <div className="px-6 py-6  ">
       <Navbar />
       {/* bg-[#020617]  */}
       <Routes>
