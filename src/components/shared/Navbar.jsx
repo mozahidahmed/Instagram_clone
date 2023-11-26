@@ -7,7 +7,7 @@ import { LuSend } from "react-icons/lu";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between items-center lg:text-3xl md:text-2xl text-xl">
+    <div className="flex justify-between items-center lg:text-3xl text-2xl">
       <Link to="/">
         <h1 className=" font-bold logo">Instagram</h1>
       </Link>

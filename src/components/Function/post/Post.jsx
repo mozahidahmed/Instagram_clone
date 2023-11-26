@@ -6,7 +6,7 @@ import { MdDataSaverOn } from "react-icons/md";
 
 const Post = ({post}) => {
     const { doc, profile_img, post_img, like, profile_name } = post;
-    
+    //add design
     return (
       <div>
         <div className="">
@@ -28,13 +28,13 @@ const Post = ({post}) => {
           <div className="py-1">
             <p>{doc}</p>
           </div>
-          <div className="mt-2 lg:text-2xl md:text-2xl  text-xl font-bold flex justify-between">
+          <div className="mt-2  text-2xl font-bold flex justify-between">
             <div className="flex gap-4">
               <BsHeart />
               <FaRegComment />
               <TbLocationShare />
             </div>
-            <div className="">
+            <div className="text-2xl">
               <MdDataSaverOn className="font-bold" />
             </div>
           </div>

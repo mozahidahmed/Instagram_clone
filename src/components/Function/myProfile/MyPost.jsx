@@ -29,13 +29,13 @@ const MyPost = ({ post }) => {
         <div className="">
           <p>{doc}</p>
         </div>
-        <div className="mt-2 lg:text-2xl  md:text-2xl text-xl font-bold flex justify-between">
+        <div className="mt-2  text-2xl font-bold flex justify-between">
           <div className="flex gap-4">
             <BsHeart />
             <FaRegComment />
             <TbLocationShare />
           </div>
-          <div className="">
+          <div className="lg:text-2xl  text-2xl">
             <MdDataSaverOn className="font-bold" />
           </div>
         </div>
