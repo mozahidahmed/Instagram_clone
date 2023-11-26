@@ -6,9 +6,10 @@ import { MdAddCircleOutline } from "react-icons/md";
 import { LuSend } from "react-icons/lu";
 
 const Navbar = () => {
+  //done .....
   //done
   return (
-    <div className="flex justify-between items-center lg:text-3xl text-2xl sticky top-0 z-[50]">
+    <div className="flex justify-between items-center bg-white  lg:text-3xl text-2xl ">
       <Link to="/">
         <h1 className=" font-bold logo">Instagram</h1>
       </Link>
