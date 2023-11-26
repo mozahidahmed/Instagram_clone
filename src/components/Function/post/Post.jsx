@@ -5,7 +5,7 @@ import { TbLocationShare } from "react-icons/tb";
 import { MdDataSaverOn } from "react-icons/md";
 
 const Post = ({post}) => {
-    const { img, profile_img, post_img, like, profile_name } = post;
+    const { doc, profile_img, post_img, like, profile_name } = post;
     
     return (
       <div>
@@ -25,7 +25,10 @@ const Post = ({post}) => {
           <div className="mt-2">
             <img src={post_img} alt="" />
           </div>
-          <div className="mt-4 text-2xl font-bold flex justify-between">
+          <div className="py-1">
+            <p>{doc}</p>
+          </div>
+          <div className="mt-2 lg:text-2xl md:text-2xl  text-xl font-bold flex justify-between">
             <div className="flex gap-4">
               <BsHeart />
               <FaRegComment />

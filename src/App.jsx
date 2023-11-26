@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import Navbar from './components/shared/Navbar';
 import Users from './components/Function/people/Users';
 import MyProfile from './components/Function/myProfile/MyProfile';
+import Add from './components/Function/addPost/Add';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/" element={<Home />}></Route>
         <Route path="/allusers" element={<Users />}></Route>
         <Route path="/profile" element={<MyProfile />}></Route>
+        <Route path="/addpost" element={<Add />}></Route>
 
         {/* authentication router */}
         <Route path="/signup" element={<SignUp />}></Route>

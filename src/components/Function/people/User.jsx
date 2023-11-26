@@ -9,6 +9,7 @@ const User = ({user}) => {
         <div className="border_people grid justify-center border-black p-4">
           <div className="rounded-full   border-2 border-purple-600  ">
             <img src={profile_img} alt="" className="rounded-full w-24 h-24" />
+           
           </div>
           <div className="grid justify-center py-2">
             <h1>{profile_name}</h1>
